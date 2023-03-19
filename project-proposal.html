@@ -14604,14 +14604,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exploring-housing-prices"><strong>Exploring housing prices</strong><a class="anchor-link" href="#Exploring-housing-prices">&#182;</a></h2><h2 id="Introduction"><em>Introduction</em><a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Some of the most expensive real estate in the world is located on the California coast.[1] Over the last several decades, it has become evident that rising sea levels, climate change, and coastal erosion threaten the economic and physical stability of coastal properties.[2,3,4] Research reported by the California Legislative Analyst’s Office states that “over $150 billion of property equating to more than 6% of the state’s GDP and 600,000 people could be impacted by dynamic flooding by 2100”.[2,3]</p>
-<p>There is disagreement among scientists, government organizations, and coastal residents about how to address the situation without sacrificing the value of at-risk properties.[1]
-Continued study of the relationship between property value and coastline proximity will be a useful way to gauge the efficacy of whatever measures are implemented, as well as public sentiment.</p>
-<p>We are working with data originally collected from the 1990 California census, containing the variables longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income, median_house_value, and ocean_proximity.</p>
-<p>We hope to establish whether or not ocean proximity had an effect on median home value in 1990, by comparing median home prices of inland houses and houses less than one hour away from the ocean. There are extreme values present in this data, so to mitigate their impact on our results, median and IQR will be used as parameters.</p>
-<p>Most of the currently available data regarding the relationship between ocean proximity and property value in California has focused on homes situated on or near the immediate coastline.[1] Research shows that the effects of SLR will extend inland beyond the coastal region, and implores policy makers to start planning more aggressively.[2,3,4,5] By using data from the 1990 census in our analysis, we hope to provide a point of reference for future study that encompasses homes outside of the traditional coastal region that still stand to be affected by the impending ecological disruption.</p>
+<h2 id="Exploring-housing-prices"><strong>Exploring housing prices</strong><a class="anchor-link" href="#Exploring-housing-prices">&#182;</a></h2><h2 id="Introduction"><em>Introduction</em><a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Some of the most expensive real estate in the world is located on the California coast.[1] Over the last
+several decades, it has become evident that rising sea levels, climate change, and coastal erosion threaten
+the economic and physical stability of coastal properties.[2,3,4] Research reported by the California
+Legislative Analyst’s Office states that “over $150 billion of property equating to more than 6% of the
+state’s GDP and 600,000 people could be impacted by dynamic flooding by 2100”.[2,3]</p>
+<p>There is disagreement among scientists, government organizations, and coastal residents about how to
+address the situation without sacrificing the value of at-risk properties.[1] Continued study of the
+relationship between property value and coastline proximity will be a useful way to gauge the efficacy of
+whatever measures are implemented, as well as public sentiment.</p>
+<p>We are working with data originally collected from the 1990 California census, containing the variables
+longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households,
+median_income, median_house_value, and ocean_proximity.</p>
+<p>We hope to establish whether or not ocean proximity had an effect on median home value in 1990, by
+comparing median home prices of inland houses and houses less than one hour away from the ocean.
+There are extreme values present in this data, so to mitigate their impact on our results, median and IQR
+will be used as parameters.</p>
 <p>The data we are using is <a href="https://www.kaggle.com/datasets/camnugent/california-housing-prices">California housing prices</a> which can be found by going on the link provided.</p>
-<p><img src="https://user-images.githubusercontent.com/90440745/140980802-033a00bf-2f76-46d0-b4ad-947bb7379b0d.jpeg" alt="student performance" /></p>
 
 </div>
 </div>
@@ -14644,7 +14653,7 @@ Continued study of the relationship between property value and coastline proximi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
@@ -14669,7 +14678,15 @@ Continued study of the relationship between property value and coastline proximi
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre><span class="ansi-bold">Rows: </span><span class="ansi-blue-fg">20640</span> <span class="ansi-bold">Columns: </span><span class="ansi-blue-fg">10</span>
+<pre>── <span class="ansi-bold">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.2 ──
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.6      <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4 
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">tibble </span> 3.1.8      <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.10
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">tidyr  </span> 1.2.1      <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">stringr</span> 1.4.1 
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">readr  </span> 2.1.2      <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">forcats</span> 0.5.2 
+── <span class="ansi-bold">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──
+<span class="ansi-red-fg">✖</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
+<span class="ansi-red-fg">✖</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
+<span class="ansi-bold">Rows: </span><span class="ansi-blue-fg">20640</span> <span class="ansi-bold">Columns: </span><span class="ansi-blue-fg">10</span>
 <span class="ansi-cyan-fg">──</span> <span class="ansi-bold">Column specification</span> <span class="ansi-cyan-fg">────────────────────────────────────────────────────────</span>
 <span class="ansi-bold">Delimiter:</span> &#34;,&#34;
 <span class="ansi-red-fg">chr</span> (1): ocean_proximity
@@ -14728,7 +14745,7 @@ Continued study of the relationship between property value and coastline proximi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">latitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">median_house_value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ocean_proximity</span><span class="p">))</span> <span class="o">+</span> 
@@ -14779,7 +14796,7 @@ b'<svg width="504pt" height="504pt">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ocean_proximity</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">median_house_value</span><span class="p">))</span> <span class="o">+</span> 
@@ -14830,7 +14847,7 @@ b'<svg width="504pt" height="504pt">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">housing</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">ocean_proximity</span><span class="p">))</span> <span class="o">+</span> 
@@ -14881,7 +14898,7 @@ b'<svg width="504pt" height="504pt">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="n">ocean</span> <span class="o">&lt;-</span> <span class="n">housing</span> <span class="o">%&gt;%</span> 
@@ -14936,7 +14953,7 @@ b'<svg width="504pt" height="504pt">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">ocean</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">median_house_value</span><span class="p">))</span> <span class="o">+</span> 
@@ -15019,7 +15036,7 @@ b'<svg width="504pt" height="504pt">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="s">"&lt;1H ocean"</span><span class="p">)</span>
@@ -15097,15 +15114,25 @@ b'<svg width="504pt" height="504pt">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Methods"><em>Methods</em><a class="anchor-link" href="#Methods">&#182;</a></h2><p>This report is trustworthy because firstly the dataset is from a reputable source, the data cleaning and wrangling process is described clearly making it easy to reproduce the reproducible and analysis, the plot and estimates presented will make it easy for stakeholders to understand the findings of our analysis, however they are not enough to prove our hypothesis since we only provide descriptive analysis and no statistical inference. As well, despite the boxplots, the analysis done does not help address how confident we are that we can accept the alternative hypothesis. To address this gap we will provide hypothesis testing and confidence intervals to determine the difference in median housing prices between houses in ocean proximity and houses inland is significant.
-** we can perform a two sample t test to construct a confidence interval to get a range of the true difference in median housing prices.</p>
-<p>Take a sample &amp; bootstrap it as a repeat analysis</p>
-<p>what do we expect to find?
-We expect to find that the median house prices in ocean proximity are higher than the median house price inland.</p>
-<p>What impact could such findings have?
-Our findings can be extremely applicable to real estate market transactions. In particular, it can be used to help price houses for sale. It can also impact buyers because they can now weigh the value of having an ocean-view house with the financial feasibility, all else equal. If we hypothesize that inland houses are indeed cheaper without it being due to sampling variance at a given level of significance, then it will help make the real estate market more transparent.</p>
-<p>What future questions could this lead to?
-After our analysis, we can further develop the analysis by examining the impact of alternative metrics on median home prices, such as median age of the houses or how many bedrooms they have. As well, we can look into how this relationship has changed over time - has being closer to the ocean widened the gap in recent years? Lastly, we can compare these findings to other coastal states such as Florida or Vancouver.</p>
+<h2 id="Methods"><em>Methods</em><a class="anchor-link" href="#Methods">&#182;</a></h2><p>We are working with data from a reputable source; our data cleaning and wrangling processes are clearly
+elucidated, contributing to the reproducability of our results. Potential stakeholders will be able to easily
+understand the findings of our analysis from the plot and estimates presented; however; they are not
+enough to prove our hypothesis, since only descriptive analysis and no statistical inference was
+conducted.</p>
+<p>Despite the boxplots, the analysis does not address how confident we are that we can accept the
+alternative hypothesis. To address this gap, we will utilise hypothesis testing and perform a two-sample ttest to construct a confidence intervaland obtain the range containing the true difference in median
+housing prices. We will also perform a repeat bootstrap analysis, and compare the results to the
+confidence interval.</p>
+<p>We expect to find that the median house prices in ocean proximity are higher than the median house price
+inland.</p>
+<p>Most of the currently available data regarding the relationship between ocean proximity and property
+value in California has focused on homes situated on or near the immediate coastline.[1] Research shows
+that the effects of sea level rise will extend inland beyond the coastal region, and implores policy makers
+to start planning more aggressively.[2,3,4,5] By using data from the 1990 census in our analysis, we hope
+to provide a point of reference for future study that encompasses homes outside of the traditional coastal
+region that still stand to be affected by the impending ecological disruption.</p>
+<p>We can further develop the analysis by examining the impact of alternative metrics on median home
+prices, and perform similar analyses on recent data.</p>
 
 </div>
 </div>
